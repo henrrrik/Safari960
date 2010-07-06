@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Henrik Sjökvist</string>
+	<key>CFBundleDisplayName</key>
+	<string>Safari960</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.henriksjokvist.safari960</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Context Menu Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>toggle_grid_12</string>
+				<key>Identifier</key>
+				<string>ToggleGridItem12</string>
+				<key>Title</key>
+				<string>Show 12 Col Grid</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>toggle_grid_16</string>
+				<key>Identifier</key>
+				<string>ToggleGridItem16</string>
+				<key>Title</key>
+				<string>Show 16 Col Grid</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>toggle_grid_24</string>
+				<key>Identifier</key>
+				<string>ToggleGridItem24</string>
+				<key>Title</key>
+				<string>Show 24 Col Grid</string>
+			</dict>
+		</array>
+		<key>Global Page</key>
+		<string>safari960.html</string>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>Start</key>
+			<array>
+				<string>safari960.js</string>
+			</array>
+		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>safari960.css</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>Allows you to overlay a site with a 960.gs grid</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>http://henriksjokvist.net</string>
+</dict>
+</plist>

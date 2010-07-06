@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Safari960</title>
+   <script type="text/javascript">
+
+    function performCommand(event) {
+      if (event.command === "toggle_grid_12") {
+        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("toggle_grid", "12");
+      }
+      if (event.command === "toggle_grid_16") {
+        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("toggle_grid", "16");
+      }
+      if (event.command === "toggle_grid_24") {
+        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("toggle_grid", "24");
+      }
+    }
+    safari.application.addEventListener("command", performCommand, false);
+    
+   </script>
+</head>
+<body>
+</body>
+</html>

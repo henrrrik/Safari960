@@ -1,0 +1,20 @@
+div#safari-960 {
+  width:100%;
+  z-index:99;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity: 0.5;
+}
+
+div#safari-960.safari-960-col-12 {
+  background:transparent url(img/12_col.gif) repeat-y top center !important;  
+}
+
+div#safari-960.safari-960-col-16 {
+  background:transparent url(img/16_col.gif) repeat-y top center !important;  
+}
+
+div#safari-960.safari-960-col-24 {
+  background:transparent url(img/24_col.gif) repeat-y top center !important;  
+}
