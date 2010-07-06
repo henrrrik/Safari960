@@ -24,7 +24,7 @@
 				<key>Identifier</key>
 				<string>ToggleGridItem12</string>
 				<key>Title</key>
-				<string>Show 12 Col Grid</string>
+				<string>Toggle 12 Col Grid</string>
 			</dict>
 			<dict>
 				<key>Command</key>
@@ -32,7 +32,7 @@
 				<key>Identifier</key>
 				<string>ToggleGridItem16</string>
 				<key>Title</key>
-				<string>Show 16 Col Grid</string>
+				<string>Toggle 16 Col Grid</string>
 			</dict>
 			<dict>
 				<key>Command</key>
@@ -40,7 +40,7 @@
 				<key>Identifier</key>
 				<string>ToggleGridItem24</string>
 				<key>Title</key>
-				<string>Show 24 Col Grid</string>
+				<string>Toggle 24 Col Grid</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
