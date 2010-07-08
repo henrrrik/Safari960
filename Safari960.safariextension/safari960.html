@@ -14,6 +14,9 @@
       if (event.command === "toggle_grid_24") {
         safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("toggle_grid", "24");
       }
+      if (event.command === "grid_settings") {
+        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("grid_settings");
+      }
     }
     safari.application.addEventListener("command", performCommand, false);
     

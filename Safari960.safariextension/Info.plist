@@ -42,6 +42,14 @@
 				<key>Title</key>
 				<string>Toggle 24 Col Grid</string>
 			</dict>
+			<dict>
+				<key>Command</key>
+				<string>grid_settings</string>
+				<key>Identifier</key>
+				<string>GridSettings</string>
+				<key>Title</key>
+				<string>Grid Settings</string>
+			</dict>
 		</array>
 		<key>Global Page</key>
 		<string>safari960.html</string>
