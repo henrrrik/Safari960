@@ -1,11 +1,9 @@
 
 settings = {
   vertColor: '',
-  vertOpacity: '',
   vertWidth: '',
   vertColumns: '',
   horizColor: '',
-  horizOpacity: '',
   horizHeight: '',
   horizOffset: '',
   gutters: '',
@@ -15,22 +13,19 @@ settings = {
 };
 
 var activeCols = 0;
-
 getSettings();
 
 function getSettings() {
-  settings.vertColor = localStorage.getItem('vertColor') ? localStorage.getItem('vertColor') : '#FF0000';
-  settings.vertOpacity = localStorage.getItem('vertOpacity') ? localStorage.getItem('vertOpacity') : 0.3;
-  settings.vertWidth = localStorage.getItem('vertWidth') ? localStorage.getItem('vertWidth') : 10;
-  settings.vertColumns = localStorage.getItem('vertColumns') ? localStorage.getItem('vertColumns') : 16;
-  settings.horizColor = localStorage.getItem('horizColor') ? localStorage.getItem('horizColor') : '#0000FF';
-  settings.horizOpacity = localStorage.getItem('horizOpacity') ? localStorage.getItem('horizOpacity') : 0.4;
-  settings.horizHeight = localStorage.getItem('horizHeight') ? localStorage.getItem('horizHeight') : 16;
-  settings.horizOffset = localStorage.getItem('horizOffset') ? localStorage.getItem('horizOffset') : 2;
-  settings.gutters = localStorage.getItem('gutters') ? localStorage.getItem('gutters') : true;
-  settings.paragraphs = localStorage.getItem('paragraphs') ? localStorage.getItem('paragraphs') : true;
-  settings.invert = localStorage.getItem('invert') ? localStorage.getItem('invert') : false;
-  settings.center = localStorage.getItem('center') ? localStorage.getItem('center') : true;
+  settings.vertColor = localStorage.getItem('vertColor') || 'rgba(238, 238, 238, 0.3)';
+  settings.vertWidth = localStorage.getItem('vertWidth') || 10;
+  settings.vertColumns = localStorage.getItem('vertColumns') || 16;
+  settings.horizColor = localStorage.getItem('horizColor') || 'rgba(192, 192, 192, 0.4)';
+  settings.horizHeight = localStorage.getItem('horizHeight') || 15;
+  settings.horizOffset = localStorage.getItem('horizOffset') || 0;
+  settings.gutters = localStorage.getItem('gutters') || true;
+  settings.paragraphs = localStorage.getItem('paragraphs') || true;
+  settings.invert = localStorage.getItem('invert') || false;
+  settings.center = localStorage.getItem('center') || true;
 }
 
 function toggleGrid(cols) {
@@ -50,39 +45,37 @@ function toggleGrid(cols) {
   }
   
   pageHeight = getDocHeight();
-  overlay = document.createElement('div');
+  
+  /* Insert the canvas */
+  overlay = document.createElement('canvas');
   overlay.setAttribute('id','safari-960');
   overlay.setAttribute('class', 'safari-960-col-'+ cols);
-  overlay.setAttribute('style', 'height:'+ pageHeight +'px;');
+  overlay.setAttribute('width', 980);
+  overlay.setAttribute('height', pageHeight);  
   document.body.appendChild(overlay);
-  
-  grid = document.getElementById('safari-960');
-  
+
+  var context = overlay.getContext("2d");
+
   // Draw gutters
   var gutterWidth = (settings.vertWidth * 2);
   var gutterDistance = (960 / cols);
   var leftOffset = 0;
+  context.fillStyle = settings.vertColor;
+
   for(i = 0; i <= cols; i ++) { // cols + 1
-    gutterDiv = document.createElement('div');
-    gutterDiv.setAttribute('class', 'safari-960-gutter');
-    gutterDiv.setAttribute('style', 'height:'+ pageHeight +'px; width:'+ gutterWidth +'px; top:0; left:'+ leftOffset +'px;'
-                           +' background-color:'+ settings.vertColor +'; opacity:'+ settings.vertOpacity +';');
-    grid.appendChild(gutterDiv);
+    context.fillRect(leftOffset, 0, gutterWidth, pageHeight);
     leftOffset += gutterDistance;
   }
-  
+
   // Draw lines 
-  topOffset = settings.horizOffset;
-  while (topOffset < pageHeight) {
-    lineDiv = document.createElement('div');
-    lineDiv.setAttribute('class', 'safari-960-line');
-    lineDiv.setAttribute('style', 'top:'+ topOffset +'px;'
-                           +' background-color:'+ settings.horizColor +'; opacity:'+ settings.horizOpacity +';');         
-    grid.appendChild(lineDiv);
-    topOffset += horizHeight;
+  for (var y = settings.horizOffset + 0.5; y < pageHeight; y += settings.horizHeight) {
+    context.moveTo(0, y);
+    context.lineTo(980, y);
   }
-      
+  context.strokeStyle = settings.horizColor;
+  context.stroke();
 }   
+
 
 
 function messageHandler(event) {
@@ -126,46 +119,5 @@ document.onkeydown = function(e){
 		// Ctrl+Alt+A
 		// TODO: Invert grid
 	}
-	if (e.which == 27) hideSettingsPanel();
 };
 
-// Settings panel
-
-function displaySettingsPanel() {
-  if (!document.getElementById('safari-960-settings')) {
-    settingsPanel = document.createElement('div');
-    settingsPanel.setAttribute('id','safari-960-settings');
-
-//    settingsPanel.innerText = '
- //   <label for="vertcolor">
-//    <input type="text" 
-    
-    
-    
-//    ';
-
-
-//    vertColor
-//    vertOpacity 
-//    vertWidth
-//    vertColumns 
-//    horizColor
-//    horizOpacity
-//    horizHeight 
-//    horizOffset 
-//    gutters
-//    paragraphs
-//    invert
-//    center
-
-
-    document.body.appendChild(settingsPanel);
-  }
-}
-
-
-function hideSettingsPanel() {
-  if (document.getElementById('safari-960-settings')) {
-    document.getElementById('safari-960-settings').setAttribute('style', 'display:none;');
-  }  
-}

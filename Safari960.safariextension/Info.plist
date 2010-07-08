@@ -7,13 +7,13 @@
 	<key>CFBundleDisplayName</key>
 	<string>Safari960</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.henriksjokvist.safari960</string>
+	<string>net.henriksjokvist.safari.safari960</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0.1</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -41,14 +41,6 @@
 				<string>ToggleGridItem24</string>
 				<key>Title</key>
 				<string>Toggle 24 Col Grid</string>
-			</dict>
-			<dict>
-				<key>Command</key>
-				<string>grid_settings</string>
-				<key>Identifier</key>
-				<string>GridSettings</string>
-				<key>Title</key>
-				<string>Grid Settings</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
@@ -82,6 +74,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://henriksjokvist.net/extensions.plist</string>
 	<key>Website</key>
 	<string>http://henriksjokvist.net</string>
 </dict>
