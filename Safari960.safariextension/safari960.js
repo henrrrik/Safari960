@@ -33,7 +33,9 @@ function toggleGrid(cols) {
   if (document.getElementById('safari-960')) {
     document.body.removeChild(document.getElementById('safari-960'));      
   }  
-  if (!cols) cols = settings.vertColumns;
+  if (!cols) {
+    cols = settings.vertColumns;
+  }
   
   // If same number of cols as currently active, switch them off.
   if (cols === activeCols) {
@@ -103,12 +105,12 @@ function getDocHeight() {
 var isCtrl = false;
 var isAlt = false;
 
-document.onkeyup = function(e){
+document.onkeyup = function(e) {
 	if (e.which == 17) isCtrl = false;
 	if (e.which == 18) isAlt = false;
 };
 
-document.onkeydown = function(e){
+document.onkeydown = function(e) {
 	if (e.which == 17) isCtrl = true;
 	if (e.which == 18) isAlt = true;
 	if (e.which == 67 && isCtrl == true && isAlt == true) {
@@ -119,5 +121,48 @@ document.onkeydown = function(e){
 		// Ctrl+Alt+A
 		// TODO: Invert grid
 	}
+	if (e.which == 27) {
+	  hideSettingsPanel();
+  }
 };
 
+// Settings panel
+
+function displaySettingsPanel() {
+  if (!document.getElementById('safari-960-settings')) {
+    settingsPanel = document.createElement('div');
+    settingsPanel.setAttribute('id','safari-960-settings');
+
+//    settingsPanel.innerText = '
+ //   <label for="vertcolor">
+//    <input type="text" 
+
+
+
+//    ';
+
+
+//    vertColor
+//    vertOpacity 
+//    vertWidth
+//    vertColumns 
+//    horizColor
+//    horizOpacity
+//    horizHeight 
+//    horizOffset 
+//    gutters
+//    paragraphs
+//    invert
+//    center
+
+
+    document.body.appendChild(settingsPanel);
+  }
+}
+
+
+function hideSettingsPanel() {
+  if (document.getElementById('safari-960-settings')) {
+    document.getElementById('safari-960-settings').setAttribute('style', 'display:none;');
+  }  
+}

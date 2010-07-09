@@ -6,3 +6,18 @@ canvas#safari-960 {
   margin-left:-490px !important;
 }
 
+div#safari-960-settings {
+  position:fixed;
+  z-index:500;
+  top:50%;
+  margin-top:-150px !important;
+  left:50%;
+  margin-left:-250px !important;
+  width:500px;
+  height:300px;
+  background-color:#222 !important;
+  color:#eee !important;
+  border:4px solid #555;
+  -webkit-border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
