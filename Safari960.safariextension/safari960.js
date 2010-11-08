@@ -6,7 +6,7 @@ settings = {};
 function getSettings() {
   
   // Defaults
-  settings.vertcolor = 'rgba(238, 238, 238, 0.3)';
+  settings.vertcolor = 'rgba(255, 0, 0, 0.2)';
   settings.vertwidth = 10;
   settings.vertcolumns = 16;
   settings.horizcolor = 'rgba(192, 192, 192, 0.4)';
