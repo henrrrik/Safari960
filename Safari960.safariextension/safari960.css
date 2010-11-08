@@ -11,6 +11,7 @@ canvas#safari-960.center {
 }
 
 div#safari-960-settings {
+  text-align:left !important;
   position:fixed !important;
   z-index:501 !important;
   top:50% !important;

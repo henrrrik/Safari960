@@ -185,63 +185,56 @@ document.onkeydown = function(e) {
 // Settings panel
 function showSettingsPanel() {
   showGrid();
-  // If there's no panel on the page already, insert it.
-  if (!document.getElementById('safari-960-settings')) {
-    settingsPanel = document.createElement('div');
-    settingsPanel.setAttribute('id','safari-960-settings');
-
-    settingsPanel.innerHTML = '<div class="settings-h1">Grid Settings for '+window.location.hostname+'</div><div id="vertical-setup"><div class="settings-h2">Vertical</div><div class="label label-vertcolor">Color</div><input type="text" size="30" id="vertcolor" value="'+settings.vertcolor+'" /><div class="label label-vertwidth"">Width</div><input type="text" size="30" id="vertwidth" value="'+settings.vertwidth+'" /><div class="label label-vertcolumns">Columns</div><select id="vertcolumns" value="'+settings.vertcolumns+'" ><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="10">10</option><option value="12">12</option><option value="15">15</option><option value="16">16</option><option value="20">20</option><option value="24">24</option><option value="30">30</option><option value="32">32</option><option value="40">40</option></select></div><div id="horizontal-setup"><div class="settings-h2">Horizontal</div><div class="label label-horizcolor">Color</div><input type="text" size="30" id="horizcolor" value="'+settings.horizcolor+'" /><div class="label label-horizheight">Height</div><input type="text" size="30" id="horizheight" value="'+settings.horizheight+'" /><div class="label label-horizoffset">Offset</div><input type="text" size="30" id="horizoffset" value="'+settings.horizoffset+'" /></div><div id="misc-setup"><div class="settings-h2">Misc</div><div class="block-item"><div class="label label-gutters">Enable vertical (gutters)</div><input id="gutters" type="checkbox" '+((settings.gutters == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-paragraphs">Enable horizontal (paragraphs)</div><input id="paragraphs" type="checkbox" '+((settings.paragraphs == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-invert">Invert vertical</div><input id="invert" type="checkbox" '+((settings.invert == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-center">Center grid</div><input id="center" type="checkbox" '+((settings.center == true) ? 'checked' :'')+' /></div><div class="buttons"><a class="settings-button" id="reset" href="#"">Reset</a><a class="settings-button" id="ok" href="#"">OK</a></div></div>';
-    
-    document.body.appendChild(settingsPanel);
-    document.getElementById('vertcolumns').value = settings.vertcolumns;
-    
-    document.getElementById('ok').onclick = function() {  
-      saveSettings();
-      removeSettingsPanel();
-      return false;  
-    };
-//  TODO: Make it possbible to reset to default settings  
-    document.getElementById('reset').onclick = function() {  
-      flushSettings();
-      removeSettingsPanel();
-      showSettingsPanel();
-      return false;  
-    };
-    
-    // Set event handlers that save the various settings on change with a delay.
-    for (var setting in settings) {
-      form_element = document.getElementById(setting);
-      if (form_element.tagName == 'INPUT' && form_element.getAttribute('type') == 'text') {
-        form_element.onkeyup = function() {
-          typewatch(function(){saveSettings();}, 1000);
-        };
-      }
-      else {
-        form_element.onchange = function() {
-          typewatch(function(){saveSettings();}, 0);
-        };
-      } 
-    }
-    
-  } 
-  // Otherwise, just show it.
-  else {
-    document.getElementById('safari-960-settings').setAttribute('style', 'display:block;');    
+  
+  // If there's a panel on the page already, remove it.
+  if (document.getElementById('safari-960-settings')) {
+    removeSettingsPanel();
   }
+  settingsPanel = document.createElement('div');
+  settingsPanel.setAttribute('id','safari-960-settings');
+  
+  settingsPanel.innerHTML = '<div class="settings-h1">Grid Settings for '+window.location.hostname+'</div><div id="vertical-setup"><div class="settings-h2">Vertical</div><div class="label label-vertcolor">Color</div><input type="text" size="30" id="vertcolor" value="'+settings.vertcolor+'" /><div class="label label-vertwidth"">Width</div><input type="text" size="30" id="vertwidth" value="'+settings.vertwidth+'" /><div class="label label-vertcolumns">Columns</div><select id="vertcolumns" value="'+settings.vertcolumns+'" ><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="10">10</option><option value="12">12</option><option value="15">15</option><option value="16">16</option><option value="20">20</option><option value="24">24</option><option value="30">30</option><option value="32">32</option><option value="40">40</option></select></div><div id="horizontal-setup"><div class="settings-h2">Horizontal</div><div class="label label-horizcolor">Color</div><input type="text" size="30" id="horizcolor" value="'+settings.horizcolor+'" /><div class="label label-horizheight">Height</div><input type="text" size="30" id="horizheight" value="'+settings.horizheight+'" /><div class="label label-horizoffset">Offset</div><input type="text" size="30" id="horizoffset" value="'+settings.horizoffset+'" /></div><div id="misc-setup"><div class="settings-h2">Misc</div><div class="block-item"><div class="label label-gutters">Enable vertical (gutters)</div><input id="gutters" type="checkbox" '+((settings.gutters == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-paragraphs">Enable horizontal (paragraphs)</div><input id="paragraphs" type="checkbox" '+((settings.paragraphs == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-invert">Invert vertical</div><input id="invert" type="checkbox" '+((settings.invert == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-center">Center grid</div><input id="center" type="checkbox" '+((settings.center == true) ? 'checked' :'')+' /></div><div class="buttons"><a class="settings-button" id="reset" href="#"">Reset</a><a class="settings-button" id="ok" href="#"">OK</a></div></div>';
+  
+  document.body.appendChild(settingsPanel);
+  document.getElementById('vertcolumns').value = settings.vertcolumns;
+  
+  document.getElementById('ok').onclick = function() {  
+    saveSettings();
+    removeSettingsPanel();
+    return false;  
+  };
+
+  // Revert to default settings
+  document.getElementById('reset').onclick = function() {  
+    flushSettings();
+    removeSettingsPanel();
+    showSettingsPanel();
+    return false;  
+  };
+  
+  // Set event handlers that save the various settings on change with a delay.
+  for (var setting in settings) {
+    form_element = document.getElementById(setting);
+    if (form_element.tagName == 'INPUT' && form_element.getAttribute('type') == 'text') {
+      form_element.onkeyup = function() {
+        actionWatch(function(){saveSettings();}, 1000);
+      };
+    }
+    else {
+      form_element.onchange = function() {
+        actionWatch(function(){saveSettings();}, 0);
+      };
+    } 
+  }
+  
+  
 }
 
 // Helper function for delaying an action
-var typewatch = function(){
+var actionWatch = function(){
     var timer = 0;
     return function(callback, ms){
         clearTimeout (timer);
         timer = setTimeout(callback, ms);
     };
 }();
-
-function isEmpty(object) { 
-  for(var i in object) { 
-    return true; 
-  } 
-  return false;
-}
