@@ -47,9 +47,6 @@ div#safari-960-settings {
 #safari-960-settings .label, #safari-960-settings input {
   font-size:12px !important;
 }
-#safari-960-settings input {
-  width:171px !important;
-}
 
 #safari-960-settings #vertical-setup, #safari-960-settings #horizontal-setup {
   width:190px !important;
@@ -109,29 +106,112 @@ div#safari-960-settings {
 #safari-960-settings input {
   display:inline !important;
 }
-#safari-960-settings input[type="text"] {
-}
 #safari-960-settings .buttons {
   text-align:right !important;
 }
 
 #safari-960-settings a.settings-button {
+  text-decoration:none !important;
   margin-left:10px !important;
   font-family: 'Helvetica Neue', sans-serif !important;
 	font-size: 12px !important;
 	color: #444 !important;
-	padding: 3px 10px !important;
+  padding: 3px 10px !important;
+  background: -webkit-gradient(
+  	linear, left top, left bottom, 
+  	from(#f0f0ed),
+  	to(#dedede)) !important;
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  border: 1px solid #000000 !important;
+  -webkit-box-shadow:
+  	0px 1px 3px rgba(000,000,000,0.3),
+  	inset 0px 0px 1px rgba(255,255,255,0.7) !important;
+}
+
+
+button.css3button {
+	font-size: 12px;
+	color: #050505;
+	padding: 5px 15px;
 	background: -webkit-gradient(
 		linear, left top, left bottom, 
-		from(#cdcecf),
-		to(#949494)) !important;
-	border-radius: 6px !important;
-	-webkit-border-radius: 6px !important;
-	border: 1px solid #444 !important;
+		from(#c4c4c4),
+		to(#dedede));
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border: 1px solid #000000;
 	-webkit-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,1) !important;
+		0px 1px 3px rgba(000,000,000,0.3),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
 	text-shadow:
-		0px -1px 0px rgba(000,000,000,0.7),
-		0px 1px 0px rgba(255,255,255,0.3) !important;
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3)
+}
+
+
+
+
+#safari-960-settings a.settings-button:hover, #safari-960-settings a.settings-button:visited {
+  text-decoration:none !important;
+}
+
+#safari-960-settings input[type="text"] {
+  -webkit-appearance: textfield !important;
+  -webkit-box-shadow: none  !important;
+  -webkit-rtl-ordering: logical !important;
+  -webkit-user-select: text  !important;
+  background-attachment: scroll !important;
+  background-clip: border-box !important;
+  background-color: white !important;
+  background-image: none !important;
+  background-origin: padding-box !important;
+  border-bottom-color: #EEE !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-style: inset !important;
+  border-bottom-width: 2px !important;
+  border-left-color: #EEE !important;
+  border-left-style: inset !important;
+  border-left-width: 2px !important;
+  border-right-color: #EEE !important;
+  border-right-style: inset !important;
+  border-right-width: 2px !important;
+  border-top-color: #EEE !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-top-style: inset !important;
+  border-top-width: 2px !important;
+  color: black !important;
+  display: inline-block !important;
+  font-family: 'Helvetica Neue', sans-serif !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: normal !important;
+  height: 15px !important;
+  left: auto !important;
+  letter-spacing: normal !important;
+  line-height: normal !important;
+  margin-bottom: 2px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 2px !important;
+  padding-bottom: 1px !important;
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+  padding-top: 1px !important;
+  position: static !important;
+  text-align: auto !important;
+  text-indent: 0px !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  top: auto !important;
+  vertical-align: baseline !important;
+  word-spacing: 0px !important;
+  z-index: auto !important;
+  width:171px !important;
+}
+#safari-960-settings input[type="checkbox"] {
+  margin: 3px 3px 3px 3px !important;
 }
