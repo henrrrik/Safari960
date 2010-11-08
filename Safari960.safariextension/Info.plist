@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>2.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>2.0.0</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -70,7 +70,7 @@
 		</array>
 	</dict>
 	<key>Description</key>
-	<string>Allows you to overlay a site with a 960.gs grid</string>
+	<string>Allows you to overlay a site with a layout grid</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
