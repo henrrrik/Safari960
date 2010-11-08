@@ -1,9 +1,13 @@
+/*
+
+Lots of ugly CSS to make sure we override the site's styling.
+
+*/
+
 canvas#safari-960 {
   z-index:500 !important;
   position:absolute !important;
   top:0 !important;
-/*  -webkit-transition: opacity 2s ease-in;
-  opacity:1; */
 }
 canvas#safari-960.center {
   left:50% !important;
@@ -21,9 +25,9 @@ div#safari-960-settings {
 
   font-size:12px !important;
   color: #444 !important;
-  font-family: 'Helvetica Neue', sans-serif !important;
-  -webkit-box-shadow: #AAA 0px -5px 40px inset, white 0px 20px 40px inset, rgba(0, 0, 0, 0.496094) 0px 2px 6px !important;
-  background-color: #ccc !important;
+  font-family: 'Helvetica', sans-serif !important;
+  -webkit-box-shadow: #ccc 0px -5px 40px inset, white 0px 20px 40px inset, rgba(0, 0, 0, 0.496094) 0px 2px 6px !important;
+  background-color: #eee !important;
   border: 1px solid rgba(0, 0, 0, 0.496094) !important;
   border-bottom-left-radius: 6px 6px !important;
   border-bottom-left-radius: 6px 6px !important;
@@ -71,7 +75,7 @@ div#safari-960-settings {
   text-indent:0 !important;
   background-color:none !important;
   background-image:none !important;
-  font-family: 'Helvetica Neue', sans-serif !important;
+  font-family: 'Helvetica', sans-serif !important;
   font-weight:bold !important;
 }
 #safari-960-settings, #safari-960-settings .settings-h1, #safari-960-settings .settings-h2, #safari-960-settings .label {
@@ -113,7 +117,7 @@ div#safari-960-settings {
 #safari-960-settings a.settings-button {
   text-decoration:none !important;
   margin-left:10px !important;
-  font-family: 'Helvetica Neue', sans-serif !important;
+  font-family: 'Helvetica', sans-serif !important;
 	font-size: 12px !important;
 	color: #444 !important;
   padding: 3px 10px !important;
@@ -184,7 +188,7 @@ button.css3button {
   border-top-width: 2px !important;
   color: black !important;
   display: inline-block !important;
-  font-family: 'Helvetica Neue', sans-serif !important;
+  font-family: 'Helvetica', sans-serif !important;
   font-size: 12px !important;
   font-style: normal !important;
   font-variant: normal !important;
