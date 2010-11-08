@@ -1,0 +1,143 @@
+<style>
+  body {
+    margin:30px;
+  }
+  #setup-pane {
+    font-size:12px;
+    color: #444;
+    font-family: 'Helvetica Neue', sans-serif;
+    -webkit-box-shadow: #AAA 0px -5px 40px inset, white 0px 20px 40px inset, rgba(0, 0, 0, 0.496094) 0px 2px 6px;
+    background: #CCC;
+    border: 1px solid rgba(0, 0, 0, 0.496094);
+    border-bottom-left-radius: 6px 6px;
+    border-bottom-left-radius: 6px 6px;
+    border-bottom-right-radius: 6px 6px;
+    border-bottom-right-radius: 6px 6px;
+    border-top-left-radius: 6px 6px;
+    border-top-left-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+    border-top-right-radius: 6px 6px;
+    padding: 0px 20px 15px 10px;
+    width: 360px;
+/*    font-size:12px;
+    background-color:#aaa;
+    width:360px;
+    padding:0 20px 20px 20px;
+    border:1px solid #555;
+    border-radius: 10px;*/
+    
+  }
+  #vertical-setup, #horizontal-setup {
+    width:150px;
+    float:left;
+    margin-bottom:10px;
+  }
+  #misc-setup {
+    clear:left;
+  }
+  #misc-setup .block-item {
+    margin-bottom:5px;
+  }
+  #misc-setup label {
+  }
+  #vertical-setup {
+    margin-right:40px;
+  }
+  h2 {
+    font-size:12px;
+    text-shadow: white 0px 1px 1px;
+    color: #444;
+  }
+  h1 {
+    -webkit-box-shadow: rgba(255, 255, 255, 0.496094) 0px 1px 1px inset;
+    background: rgba(0, 0, 0, 0.199219);
+    border-bottom: 2px groove rgba(255, 255, 255, 0.746094);
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border-top-left-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    color: #444;
+    font-size: 12px;
+    margin: 0px -20px 10px -10px;
+    padding: 5px 15px;
+    text-align: center;
+    text-shadow: white 0px 1px 1px;
+    /*
+    font-size:14px;
+    */
+  }
+  input {
+    display:inline;
+  }
+  .buttons {
+    text-align:right;
+  }
+</style>
+
+<div id="safari-960-setup-pane">
+<h1>Grid Settings for domain.com</h1>
+  <div id="vertical-setup">
+    <h2>Vertical</h2>
+    <label for="vcolor">Color</label>
+    <input id="vcolor" />
+    <label for="vopacity">Opacity</label>
+    <input id="vopacity" />
+    <label for="width">Width</label>
+    <input id="width" />
+    <label for="columns">Columns</label>
+    <select id="columns">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="10">10</option>
+      <option value="12">12</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="20">20</option>
+      <option value="24">24</option>
+      <option value="30">30</option>
+      <option value="32">32</option>
+      <option value="40">40</option>
+    </select>
+  </div>
+  <div id="horizontal-setup">
+    <h2>Horizontal</h2>
+    <label for ="hcolor">Color</label>
+    <input id="hcolor" />
+    <label for ="hopacity">Opacity</label>
+    <input id="hopacity" />
+    <label for ="height">Height</label>
+    <input id="height" />
+    <label for ="offset">Offset</label>
+    <input id="offset" />
+  </div>
+  <div id="misc-setup">
+    <h2>Misc</h2>
+    <div class="block-item">
+      <label for="gutters">Enable vertical (gutters)</label>
+      <input id="gutters" type="checkbox" />
+    </div>
+    <div class="block-item">
+      <label for="paragraphs">Enable horizontal (paragraphs)</label>
+      <input id="paragraphs" type="checkbox" />
+    </div>
+    <div class="block-item">
+      <label for="invert">Invert vertical</label>
+      <input id="invert" type="checkbox" value="false">
+    </div>
+    <div class="block-item">
+      <label for="center">Center grid</label>
+      <input id="center" type="checkbox">
+    </div>
+    <div class="buttons">
+      <input type="button" id="cancel" value="Cancel" />
+      <input type="button" id="save" value="Save" />
+    </div>
+  </div>
+</div>

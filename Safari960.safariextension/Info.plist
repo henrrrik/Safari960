@@ -20,31 +20,40 @@
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>toggle_grid_12</string>
+				<string>toggle_grid</string>
 				<key>Identifier</key>
-				<string>ToggleGridItem12</string>
+				<string>ToggleGridItem</string>
 				<key>Title</key>
-				<string>Toggle 12 Col Grid</string>
+				<string>Toggle Grid</string>
 			</dict>
 			<dict>
 				<key>Command</key>
-				<string>toggle_grid_16</string>
+				<string>grid_settings</string>
 				<key>Identifier</key>
-				<string>ToggleGridItem16</string>
+				<string>GridSettings</string>
 				<key>Title</key>
-				<string>Toggle 16 Col Grid</string>
-			</dict>
-			<dict>
-				<key>Command</key>
-				<string>toggle_grid_24</string>
-				<key>Identifier</key>
-				<string>ToggleGridItem24</string>
-				<key>Title</key>
-				<string>Toggle 24 Col Grid</string>
+				<string>Grid Settings</string>
 			</dict>
 		</array>
 		<key>Global Page</key>
 		<string>safari960.html</string>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>toggle_grid</string>
+				<key>Identifier</key>
+				<string>ToggleGridItem</string>
+				<key>Image</key>
+				<string>images/btnSafari960.png</string>
+				<key>Label</key>
+				<string>Toggle Grid</string>
+				<key>Palette Label</key>
+				<string>Toggle Grid</string>
+				<key>Tool Tip</key>
+				<string>Toggle Grid On/Off</string>
+			</dict>
+		</array>
 	</dict>
 	<key>Content</key>
 	<dict>

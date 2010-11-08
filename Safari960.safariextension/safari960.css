@@ -1,23 +1,136 @@
 canvas#safari-960 {
-  z-index:500;
-  position:absolute;
-  top:0;
-  left:50%;
+  z-index:500 !important;
+  position:absolute !important;
+  top:0 !important;
+/*  -webkit-transition: opacity 2s ease-in;
+  opacity:1; */
+}
+canvas#safari-960.center {
+  left:50% !important;
   margin-left:-490px !important;
 }
 
 div#safari-960-settings {
-  position:fixed;
-  z-index:500;
-  top:50%;
+  position:fixed !important;
+  z-index:501 !important;
+  top:50% !important;
   margin-top:-150px !important;
-  left:50%;
-  margin-left:-250px !important;
-  width:500px;
-  height:300px;
-  background-color:#222 !important;
-  color:#eee !important;
-  border:4px solid #555;
-  -webkit-border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  left:50% !important;
+  margin-left:-200px !important;
+
+  font-size:12px !important;
+  color: #444 !important;
+  font-family: 'Helvetica Neue', sans-serif !important;
+  -webkit-box-shadow: #AAA 0px -5px 40px inset, white 0px 20px 40px inset, rgba(0, 0, 0, 0.496094) 0px 2px 6px !important;
+  background-color: #ccc !important;
+  border: 1px solid rgba(0, 0, 0, 0.496094) !important;
+  border-bottom-left-radius: 6px 6px !important;
+  border-bottom-left-radius: 6px 6px !important;
+  border-bottom-right-radius: 6px 6px !important;
+  border-bottom-right-radius: 6px 6px !important;
+  border-top-left-radius: 6px 6px !important;
+  border-top-left-radius: 6px 6px !important;
+  border-top-right-radius: 6px 6px !important;
+  border-top-right-radius: 6px 6px !important;
+  padding: 0px 20px 15px 10px !important;
+  width: 400px !important;  
+  
+}
+
+#safari-960-settings .label {
+  margin-top:10px !important;
+}
+#safari-960-settings .label, #safari-960-settings .settings-h2 {
+  text-align:left !important;
+}
+#safari-960-settings .label, #safari-960-settings input {
+  font-size:12px !important;
+}
+#safari-960-settings input {
+  width:171px !important;
+}
+
+#safari-960-settings #vertical-setup, #safari-960-settings #horizontal-setup {
+  width:190px !important;
+  float:left !important;
+  margin-bottom:10px !important;
+}
+#safari-960-settings #misc-setup {
+  clear:left !important;
+}
+#safari-960-settings #misc-setup .block-item {
+  margin-bottom:5px !important;
+}
+#safari-960-settings #misc-setup .label {
+  display:inline !important;
+}
+#safari-960-settings #vertical-setup {
+  margin-right:20px !important;
+}
+
+#safari-960-settings .settings-h1, #safari-960-settings .settings-h2 {
+  height:12px !important;
+  text-indent:0 !important;
+  background-color:none !important;
+  background-image:none !important;
+  font-family: 'Helvetica Neue', sans-serif !important;
+  font-weight:bold !important;
+}
+#safari-960-settings, #safari-960-settings .settings-h1, #safari-960-settings .settings-h2, #safari-960-settings .label {
+  text-transform:none !important;
+}
+#safari-960-settings .settings-h1 {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.496094) 0px 1px 1px inset !important;
+  background: rgba(0, 0, 0, 0.199219) !important;
+  border-bottom: 2px groove rgba(255, 255, 255, 0.746094) !important;
+  border-bottom-left-radius: 0px 0px !important;
+  border-bottom-left-radius: 0px 0px !important;
+  border-bottom-right-radius: 0px 0px !important;
+  border-bottom-right-radius: 0px 0px !important;
+  border-top-left-radius: 5px 5px !important;
+  border-top-left-radius: 5px 5px !important;
+  border-top-right-radius: 5px 5px !important;
+  border-top-right-radius: 5px 5px !important;
+  color: #444 !important;
+  font-size: 12px !important;
+  line-height:12px !important;
+  margin: 0px -20px 10px -10px !important;
+  padding: 5px 15px !important;
+  text-align: center !important;
+  text-shadow: white 0px 1px 1px !important;
+}
+#safari-960-settings .settings-h2 {
+  font-size:12px !important;
+  text-shadow: white 0px 1px 1px !important;
+  color: #444 !important;
+  margin-bottom:5px !important;
+}
+#safari-960-settings input {
+  display:inline !important;
+}
+#safari-960-settings input[type="text"] {
+}
+#safari-960-settings .buttons {
+  text-align:right !important;
+}
+
+#safari-960-settings a.settings-button {
+  margin-left:10px !important;
+  font-family: 'Helvetica Neue', sans-serif !important;
+	font-size: 12px !important;
+	color: #444 !important;
+	padding: 3px 10px !important;
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#cdcecf),
+		to(#949494)) !important;
+	border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+	border: 1px solid #444 !important;
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,1) !important;
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.7),
+		0px 1px 0px rgba(255,255,255,0.3) !important;
 }
