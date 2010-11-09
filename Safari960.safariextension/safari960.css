@@ -10,8 +10,7 @@ canvas#safari-960 {
   top:0 !important;
 }
 canvas#safari-960.center {
-  left:50% !important;
-  margin-left:-490px !important;
+  left:50% !important;  
 }
 
 div#safari-960-settings {

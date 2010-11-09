@@ -8,7 +8,8 @@ function getSettings() {
   // Defaults
   settings.vertcolor = 'rgba(255, 0, 0, 0.2)';
   settings.vertwidth = 10;
-  settings.vertcolumns = 16;
+  settings.gridwidth = 960;
+  settings.vertcolumns = 12;
   settings.horizcolor = 'rgba(192, 192, 192, 0.4)';
   settings.horizheight = 15;
   settings.horizoffset = 0;
@@ -80,16 +81,21 @@ function showGrid() {
   horizheight = parseInt(settings.horizheight, 10);
   horizoffset = parseInt(settings.horizoffset, 10);
   vertwidth = parseInt(settings.vertwidth, 10);
+  gridwidth = parseInt(settings.gridwidth, 10);
   
+
+  totalwidth = gridwidth + (vertwidth*2);
+    
   pageHeight = getDocHeight();
   
   // Insert the canvas
   overlay = document.createElement('canvas');
   overlay.setAttribute('id','safari-960');
   if (settings.center) {
-    overlay.setAttribute('class', 'center');    
+    overlay.setAttribute('class', 'center');
+    overlay.setAttribute('style', 'margin-left:-'+Math.round(totalwidth/2)+'px !important;');
   }
-  overlay.setAttribute('width', 980);
+  overlay.setAttribute('width', totalwidth);
   overlay.setAttribute('height', pageHeight);  
   document.body.appendChild(overlay);
 
@@ -97,8 +103,8 @@ function showGrid() {
 
   if (settings.gutters) {
     // Draw gutters
-    var gutterWidth = (vertwidth * 2);
-    var gutterDistance = (960 / cols);
+    var gutterWidth = (vertwidth*2);
+    var gutterDistance = Math.round(gridwidth / cols);
     var leftOffset = 0;
     context.fillStyle = settings.vertcolor;
 
@@ -111,7 +117,7 @@ function showGrid() {
     else {
       // Draw columns
 
-      colWidth = (960 / cols) - gutterWidth;
+      colWidth = Math.round(gridwidth / cols) - gutterWidth;
 
       leftOffset = gutterWidth;
 
@@ -126,7 +132,7 @@ function showGrid() {
     // Draw lines 
     for (var y = horizoffset + 0.5; y < pageHeight; y = y + horizheight) {
       context.moveTo(0, y);
-      context.lineTo(980, y);
+      context.lineTo(totalwidth, y);
     }
 
     context.strokeStyle = settings.horizcolor;
@@ -193,7 +199,7 @@ function showSettingsPanel() {
   settingsPanel = document.createElement('div');
   settingsPanel.setAttribute('id','safari-960-settings');
   
-  settingsPanel.innerHTML = '<div class="settings-h1">Grid Settings for '+window.location.hostname+'</div><div id="vertical-setup"><div class="settings-h2">Vertical</div><div class="label label-vertcolor">Color</div><input type="text" size="30" id="vertcolor" value="'+settings.vertcolor+'" /><div class="label label-vertwidth"">Width</div><input type="text" size="30" id="vertwidth" value="'+settings.vertwidth+'" /><div class="label label-vertcolumns">Columns</div><select id="vertcolumns" value="'+settings.vertcolumns+'" ><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="10">10</option><option value="12">12</option><option value="15">15</option><option value="16">16</option><option value="20">20</option><option value="24">24</option><option value="30">30</option><option value="32">32</option><option value="40">40</option></select></div><div id="horizontal-setup"><div class="settings-h2">Horizontal</div><div class="label label-horizcolor">Color</div><input type="text" size="30" id="horizcolor" value="'+settings.horizcolor+'" /><div class="label label-horizheight">Height</div><input type="text" size="30" id="horizheight" value="'+settings.horizheight+'" /><div class="label label-horizoffset">Offset</div><input type="text" size="30" id="horizoffset" value="'+settings.horizoffset+'" /></div><div id="misc-setup"><div class="settings-h2">Misc</div><div class="block-item"><div class="label label-gutters">Enable vertical (gutters)</div><input id="gutters" type="checkbox" '+((settings.gutters == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-paragraphs">Enable horizontal (paragraphs)</div><input id="paragraphs" type="checkbox" '+((settings.paragraphs == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-invert">Invert vertical</div><input id="invert" type="checkbox" '+((settings.invert == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-center">Center grid</div><input id="center" type="checkbox" '+((settings.center == true) ? 'checked' :'')+' /></div><div class="buttons"><a class="settings-button" id="reset" href="#"">Reset</a><a class="settings-button" id="ok" href="#"">OK</a></div></div>';
+  settingsPanel.innerHTML = '<div class="settings-h1">Grid Settings for '+window.location.hostname+'</div><div id="vertical-setup"><div class="settings-h2">Vertical</div><div class="label label-gridwidth"">Grid width</div><input type="text" size="30" id="gridwidth" value="'+settings.gridwidth+'" /><div class="label label-vertcolor">Color</div><input type="text" size="30" id="vertcolor" value="'+settings.vertcolor+'" /><div class="label label-vertwidth"">Gutter width</div><input type="text" size="30" id="vertwidth" value="'+settings.vertwidth+'" /><div class="label label-vertcolumns">Columns</div><select id="vertcolumns" value="'+settings.vertcolumns+'" ><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="10">10</option><option value="12">12</option><option value="15">15</option><option value="16">16</option><option value="20">20</option><option value="24">24</option><option value="30">30</option><option value="32">32</option><option value="40">40</option></select></div><div id="horizontal-setup"><div class="settings-h2">Horizontal</div><div class="label label-horizcolor">Color</div><input type="text" size="30" id="horizcolor" value="'+settings.horizcolor+'" /><div class="label label-horizheight">Height</div><input type="text" size="30" id="horizheight" value="'+settings.horizheight+'" /><div class="label label-horizoffset">Offset</div><input type="text" size="30" id="horizoffset" value="'+settings.horizoffset+'" /></div><div id="misc-setup"><div class="settings-h2">Misc</div><div class="block-item"><div class="label label-gutters">Enable vertical (gutters)</div><input id="gutters" type="checkbox" '+((settings.gutters == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-paragraphs">Enable horizontal (paragraphs)</div><input id="paragraphs" type="checkbox" '+((settings.paragraphs == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-invert">Invert vertical</div><input id="invert" type="checkbox" '+((settings.invert == true) ? 'checked' :'')+' /></div><div class="block-item"><div class="label label-center">Center grid</div><input id="center" type="checkbox" '+((settings.center == true) ? 'checked' :'')+' /></div><div class="buttons"><a class="settings-button" id="reset" href="#"">Reset</a><a class="settings-button" id="ok" href="#"">OK</a></div></div>';
   
   document.body.appendChild(settingsPanel);
   document.getElementById('vertcolumns').value = settings.vertcolumns;
